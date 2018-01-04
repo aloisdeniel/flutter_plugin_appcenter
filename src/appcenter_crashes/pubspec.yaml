@@ -1,0 +1,14 @@
+name: appcenter_crashes
+description: Visual Studio App Center (Crashes) plugin for Flutter applications.
+version: 0.0.1
+author: Aloïs Deniel<alois.deniel@outlook.com>
+homepage: https://github.com/aloisdeniel/flutter_plugin_appcenter
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  plugin:
+    androidPackage: com.aloisdeniel.flutter.appcenter_crashes
+    pluginClass: AppcenterCrashesPlugin

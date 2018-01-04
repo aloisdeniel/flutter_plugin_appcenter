@@ -1,6 +1,6 @@
 # Visual Studio App Center Plugin for Flutter
 
-[![pub package](https://img.shields.io/pub/v/appcenter.svg)](https://pub.dartlang.org/packages/appcenter) 
+[![pub package](https://img.shields.io/pub/v/appcenter.svg)](https://pub.dartlang.org/packages/appcenter)
 
 Several Flutter plugins to use the [Microsoft Visual Studio App Center SDKs](https://docs.microsoft.com/en-us/appcenter/sdk/).
 
@@ -14,7 +14,7 @@ To use this plugin:
 1. From the index page, select `Add new` and create a new **iOS application (Platform: Objective-C/Swift)**, and keep your iOS app secret (ex: `123cfac9-123b-123a-123f-123273416a48`).
 1. From the index page, select `Add new` and create a new **Android application (Platform: Java)**, and keep your Android app secret (ex: `321cfac9-123b-123a-123f-123273416a48`).
 1. Add those as [dependencies in your pubspec.yaml file](https://flutter.io/platform-plugins/):
-	* `appcenter` 
+	* `appcenter`
 	* `appcenter_analytics`
 	* `appcenter_crashes`
 
@@ -40,7 +40,7 @@ await AppCenter.start(app_secret, [AppCenterAnalytics.id, AppCenterCrashes.id]);
 #### Enabling or disabling services
 
 ```dart
-await AppCenter.setEnabled(false); // global 
+await AppCenter.setEnabled(false); // global
 await AppCenterAnalytics.setEnabled(false); // just a service
 await AppCenterCrashes.setEnabled(false); // just a service
 ```
@@ -50,7 +50,7 @@ await AppCenterCrashes.setEnabled(false); // just a service
 #### Track events
 
 ```dart
-AppCenterAnalytics.trackEvent("map"); 
+AppCenterAnalytics.trackEvent("map");
 AppCenterAnalytics.trackEvent("casino", { "dollars" : "10" }); // with custom properties
 ```
 
