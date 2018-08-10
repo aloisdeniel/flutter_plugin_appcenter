@@ -10,7 +10,10 @@ class AppCenterCrashes {
 
   static const MethodChannel _channel = const MethodChannel('aloisdeniel.github.com/flutter_plugin_appcenter/appcenter_crashes');
 
-  static Future<bool> get isEnabled =>  _channel.invokeMethod('isEnabled');
+  static Future<bool> get isEnabled async {
+    final bool result = await _channel.invokeMethod('isEnabled');
+    return result; 
+  }
 
   static Future setEnabled(bool isEnabled) =>  _channel.invokeMethod('setEnabled', <String, bool>{
     'isEnabled': isEnabled,
