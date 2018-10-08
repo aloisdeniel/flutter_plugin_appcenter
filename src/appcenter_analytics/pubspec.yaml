@@ -4,6 +4,9 @@ version: 0.0.1
 author: Aloïs Deniel<alois.deniel@outlook.com>
 homepage: https://github.com/aloisdeniel/flutter_plugin_appcenter
 
+environment:
+  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+
 dependencies:
   flutter:
     sdk: flutter
