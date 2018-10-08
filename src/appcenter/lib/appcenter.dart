@@ -11,12 +11,12 @@ class AppCenter {
     'app_secret': app_secret,
   });
 
-  static Future<String> start(String app_secret, List<String> services) =>  _channel.invokeMethod('start', <String, dynamic>{
+  static Future<dynamic> start(String app_secret, List<String> services) =>  _channel.invokeMethod('start', <String, dynamic>{
     'app_secret': app_secret,
     'services': services
   });
 
-  static Future<String> get installId =>  _channel.invokeMethod('installId');
+  static Future<dynamic> get installId =>  _channel.invokeMethod('installId');
 
   static Future<bool> get isEnabled =>  _channel.invokeMethod('isEnabled');
 
