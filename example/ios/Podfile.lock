@@ -2,13 +2,13 @@ PODS:
   - appcenter (0.0.1):
     - AppCenter
     - Flutter
-  - AppCenter (1.0.1):
-    - AppCenter/Analytics (= 1.0.1)
-    - AppCenter/Crashes (= 1.0.1)
-  - AppCenter/Analytics (1.0.1):
+  - AppCenter (1.2.0):
+    - AppCenter/Analytics (= 1.2.0)
+    - AppCenter/Crashes (= 1.2.0)
+  - AppCenter/Analytics (1.2.0):
     - AppCenter/Core
-  - AppCenter/Core (1.0.1)
-  - AppCenter/Crashes (1.0.1):
+  - AppCenter/Core (1.2.0)
+  - AppCenter/Crashes (1.2.0):
     - AppCenter/Core
   - appcenter_analytics (0.0.1):
     - AppCenter/Analytics
@@ -19,28 +19,32 @@ PODS:
   - Flutter (1.0.0)
 
 DEPENDENCIES:
-  - appcenter (from `/Users/alois/flutter_plugin_appcenter/src/appcenter/ios`)
-  - appcenter_analytics (from `/Users/alois/flutter_plugin_appcenter/src/appcenter_analytics/ios`)
-  - appcenter_crashes (from `/Users/alois/flutter_plugin_appcenter/src/appcenter_crashes/ios`)
-  - Flutter (from `/Users/alois/flutter/bin/cache/artifacts/engine/ios`)
+  - appcenter (from `/Users/AS/AndroidStudioProjects/flutter_plugin_appcenter/src/appcenter/ios`)
+  - appcenter_analytics (from `/Users/AS/AndroidStudioProjects/flutter_plugin_appcenter/src/appcenter_analytics/ios`)
+  - appcenter_crashes (from `/Users/AS/AndroidStudioProjects/flutter_plugin_appcenter/src/appcenter_crashes/ios`)
+  - Flutter (from `/Users/AS/dev/flutter/bin/cache/artifacts/engine/ios`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AppCenter
 
 EXTERNAL SOURCES:
   appcenter:
-    :path: /Users/alois/flutter_plugin_appcenter/src/appcenter/ios
+    :path: "/Users/AS/AndroidStudioProjects/flutter_plugin_appcenter/src/appcenter/ios"
   appcenter_analytics:
-    :path: /Users/alois/flutter_plugin_appcenter/src/appcenter_analytics/ios
+    :path: "/Users/AS/AndroidStudioProjects/flutter_plugin_appcenter/src/appcenter_analytics/ios"
   appcenter_crashes:
-    :path: /Users/alois/flutter_plugin_appcenter/src/appcenter_crashes/ios
+    :path: "/Users/AS/AndroidStudioProjects/flutter_plugin_appcenter/src/appcenter_crashes/ios"
   Flutter:
-    :path: /Users/alois/flutter/bin/cache/artifacts/engine/ios
+    :path: "/Users/AS/dev/flutter/bin/cache/artifacts/engine/ios"
 
 SPEC CHECKSUMS:
-  AppCenter: 1d9e08e4ffe7a8eab6e9741a12d27e44074e73a7
-  appcenter: ec63d9079174977ead44a0040ff083d6dd4c94c5
-  appcenter_analytics: 46cd35cb5fac57f7a4b2ae5d5040f984b4ad4b5a
-  appcenter_crashes: 1b06d86617183e4778779b59f85a25c4bbc89493
-  Flutter: d674e78c937094a75ac71dd77e921e840bea3dbf
+  AppCenter: d0b68b2a7a87ac0aed78e66f36d87fd321d0a29c
+  appcenter: 5e85f0b7c5c040e551f8976c559103bfdb13cee2
+  appcenter_analytics: ff44d283dfb2942015f45a0550bf3e8be60eb757
+  appcenter_crashes: 5c44889c35121ee939f1b7ca3ea040d6876f9096
+  Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
 
 PODFILE CHECKSUM: 351e02e34b831289961ec3558a535cbd2c4965d2
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

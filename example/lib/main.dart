@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:appcenter/appcenter.dart';
 import 'package:appcenter_analytics/appcenter_analytics.dart';
 import 'package:appcenter_crashes/appcenter_crashes.dart';
@@ -15,13 +14,13 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
 
-  String _app_secret;
+  String _appSecret;
   String _installId = 'Unknown';
   bool _areAnalyticsEnabled = false, _areCrashesEnabled = false;
 
   _MyAppState() {
     final ios = defaultTargetPlatform == TargetPlatform.iOS;
-    _app_secret = ios ? "a8a33033-ef2f-4911-a664-a7d118287ce7" : "3f1f3b0e-24ff-436a-b42d-3c08b117d46a";
+    _appSecret = ios ? "a8a33033-ef2f-4911-a664-a7d118287ce7" : "3f1f3b0e-24ff-436a-b42d-3c08b117d46a";
   }
 
   @override
@@ -32,7 +31,7 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   initPlatformState() async {
-    await AppCenter.start(_app_secret, [AppCenterAnalytics.id, AppCenterCrashes.id]);
+    await AppCenter.start(_appSecret, [AppCenterAnalytics.id, AppCenterCrashes.id]);
 
     if (!mounted)
       return;
@@ -69,12 +68,12 @@ class _MyAppState extends State<MyApp> {
                   new IconButton(
                     icon: new Icon(Icons.map),
                     tooltip: 'map',
-                    onPressed: () { AppcenterAnalytics.trackEvent("map"); },
+                    onPressed: () { AppCenterAnalytics.trackEvent("map"); },
                   ),
                   new IconButton(
                     icon: new Icon(Icons.casino),
                     tooltip: 'casino',
-                    onPressed: () { AppcenterAnalytics.trackEvent("casino", { "dollars" : "10" }); },
+                    onPressed: () { AppCenterAnalytics.trackEvent("casino", { "dollars" : "10" }); },
                   ),
                 ])
             ]
