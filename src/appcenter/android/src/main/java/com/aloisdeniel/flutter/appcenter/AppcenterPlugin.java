@@ -83,7 +83,7 @@ public class AppcenterPlugin implements MethodCallHandler {
             servicesClasses.add(c);
           }
           catch(ClassNotFoundException notFound) {
-
+            System.out.print(notFound.getException().toString());
           }
         }
 

@@ -28,6 +28,11 @@
         [MSCrashes setEnabled:isEnabled.boolValue];
         result(nil);
    }
+   else if([@"generateTestCrash" isEqualToString:call.method])
+   {
+        [MSCrashes generateTestCrash];
+        result(nil);
+   }
    else
    {
         result(FlutterMethodNotImplemented);
