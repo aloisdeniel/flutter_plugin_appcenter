@@ -6,22 +6,21 @@ import 'package:appcenter_crashes/appcenter_crashes.dart';
 import 'package:flutter/foundation.dart' show defaultTargetPlatform;
 import 'package:flutter/foundation.dart' show TargetPlatform;
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
-  _MyAppState createState() => new _MyAppState();
+  _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-
-  String _app_secret;
+  String _appSecret;
   String _installId = 'Unknown';
   bool _areAnalyticsEnabled = false, _areCrashesEnabled = false;
 
   _MyAppState() {
     final ios = defaultTargetPlatform == TargetPlatform.iOS;
-    _app_secret = ios ? "a8a33033-ef2f-4911-a664-a7d118287ce7" : "3f1f3b0e-24ff-436a-b42d-3c08b117d46a";
+    _appSecret = ios ? "a8a33033-ef2f-4911-a664-a7d118287ce7" : "3f1f3b0e-24ff-436a-b42d-3c08b117d46a";
   }
 
   @override
@@ -32,10 +31,10 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   initPlatformState() async {
-    await AppCenter.start(_app_secret, [AppCenterAnalytics.id, AppCenterCrashes.id]);
+    await AppCenter.start(
+        _appSecret, [AppCenterAnalytics.id, AppCenterCrashes.id]);
 
-    if (!mounted)
-      return;
+    if (!mounted) return;
 
     var installId = await AppCenter.installId;
 
@@ -51,33 +50,42 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Plugin example app'),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Appcenter plugin example app'),
         ),
-        body: new Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              new Text('Install identifier: $_installId'),
-              new Text('Analytics: $_areAnalyticsEnabled'),
-              new Text('Crashes: $_areCrashesEnabled'),
-              new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  new Text('Send events'),
-                  new IconButton(
-                    icon: new Icon(Icons.map),
-                    tooltip: 'map',
-                    onPressed: () { AppcenterAnalytics.trackEvent("map"); },
-                  ),
-                  new IconButton(
-                    icon: new Icon(Icons.casino),
-                    tooltip: 'casino',
-                    onPressed: () { AppcenterAnalytics.trackEvent("casino", { "dollars" : "10" }); },
-                  ),
-                ])
-            ]
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text('Install identifier:\n $_installId'),
+            Text('Analytics: $_areAnalyticsEnabled'),
+            Text('Crashes: $_areCrashesEnabled'),
+            RaisedButton(
+              child: Text('Generate test crash'),
+              onPressed: AppCenterCrashes.generateTestCrash,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text('Send events'),
+                IconButton(
+                  icon: Icon(Icons.map),
+                  tooltip: 'map',
+                  onPressed: () {
+                    AppCenterAnalytics.trackEvent("map");
+                  },
+                ),
+                IconButton(
+                  icon: Icon(Icons.casino),
+                  tooltip: 'casino',
+                  onPressed: () {
+                    AppCenterAnalytics.trackEvent("casino", {"dollars": "10"});
+                  },
+                ),
+              ],
+            )
+          ],
         ),
       ),
     );

@@ -54,6 +54,10 @@ public class AppcenterCrashesPlugin implements MethodCallHandler {
           }
         });
         break;
+      case "generateTestCrash":
+        Crashes.generateTestCrash();
+        result.success(0);
+        break;
       default:
         result.notImplemented();
         break;
