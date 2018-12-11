@@ -28,7 +28,8 @@ void main() async {
     var pubspec = File(dir + "/pubspec.yaml");
     await step("Updating version in '${pubspec.path}'", () async {
       var contents = await pubspec.readAsString();
-      contents = contents.replaceFirst(RegExp('version: ([^\\n]*)'), 'version: ' + version.trim());
+      contents = contents.replaceFirst(
+          RegExp('version: ([^\\n]*)'), 'version: ' + version.trim());
       await pubspec.writeAsString(contents);
     });
   }
