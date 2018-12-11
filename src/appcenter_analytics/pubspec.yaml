@@ -1,6 +1,6 @@
 name: appcenter_analytics
 description: Visual Studio App Center (Analytics) plugin for Flutter applications.
-version: 0.0.1
+version: 0.2.0
 author: Aloïs Deniel<alois.deniel@outlook.com>
 homepage: https://github.com/aloisdeniel/flutter_plugin_appcenter
 
