@@ -59,6 +59,7 @@ public class AppcenterAnalyticsPlugin implements MethodCallHandler {
         String name = call.argument("name");
         Map<String, String> properties = call.argument("properties");
         Analytics.trackEvent(name, properties);
+        result.success(null);
         break;
       default:
         result.notImplemented();
