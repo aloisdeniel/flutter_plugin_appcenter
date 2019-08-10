@@ -10,7 +10,7 @@ class AppcenterAuth {
       : "com.microsoft.appcenter.auth.Auth";
       
   static const MethodChannel _channel =
-      const MethodChannel('uk.co.tomalabaster/flutter_plugin_appcenter/appcenter_crashes');
+      const MethodChannel('uk.co.tomalabaster/flutter_plugin_appcenter/appcenter_auth');
 
   static Future<UserInformation> signIn() async {
     var result = await _channel.invokeMethod('signIn');

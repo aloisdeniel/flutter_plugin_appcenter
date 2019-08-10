@@ -40,7 +40,7 @@ android {
         disable 'InvalidPackage'
     }
     dependencies {
-        def appCenterSdkVersion = '1.10.0'
+        def appCenterSdkVersion = '2.2.0'
         implementation "com.microsoft.appcenter:appcenter:${appCenterSdkVersion}"
     }
 }

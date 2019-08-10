@@ -31,4 +31,8 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+    dependencies {
+        def appCenterSdkVersion = '2.2.0'
+        implementation "com.microsoft.appcenter:appcenter-auth:${appCenterSdkVersion}"
+    }
 }
