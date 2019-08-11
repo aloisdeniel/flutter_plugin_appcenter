@@ -4,7 +4,7 @@ import 'package:appcenter_auth/models/user_information.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
-class AppcenterAuth {
+class AppCenterAuth {
   static String get id => (defaultTargetPlatform == TargetPlatform.iOS)
       ? "MSAuth"
       : "com.microsoft.appcenter.auth.Auth";

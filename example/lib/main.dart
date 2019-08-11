@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
   // Platform messages are asynchronous, so we initialize in an async method.
   initPlatformState() async {
     await AppCenter.start(
-        _appSecret, [AppCenterAnalytics.id, AppCenterCrashes.id, AppcenterAuth.id]);
+        _appSecret, [AppCenterAnalytics.id, AppCenterCrashes.id, AppCenterAuth.id]);
 
     if (!mounted) return;
 
@@ -43,7 +43,7 @@ class _MyAppState extends State<MyApp> {
 
     var areAnalyticsEnabled = await AppCenterAnalytics.isEnabled;
     var areCrashesEnabled = await AppCenterCrashes.isEnabled;
-    var isAuthEnabled = await AppcenterAuth.isEnabled;
+    var isAuthEnabled = await AppCenterAuth.isEnabled;
 
     setState(() {
       _installId = installId;
@@ -94,14 +94,14 @@ class _MyAppState extends State<MyApp> {
             RaisedButton(
               child: Text('Sign in'),
               onPressed: () async {
-                var userInfo = await AppcenterAuth.signIn();
+                var userInfo = await AppCenterAuth.signIn();
                 print(userInfo.accessToken);
               },
             ),
             RaisedButton(
               child: Text('Sign out'),
               onPressed: () async {
-                await AppcenterAuth.signOut();
+                await AppCenterAuth.signOut();
               },
             )
           ],
