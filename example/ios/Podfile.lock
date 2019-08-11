@@ -2,16 +2,21 @@ PODS:
   - appcenter (0.0.1):
     - AppCenter
     - Flutter
-  - AppCenter (1.2.0):
-    - AppCenter/Analytics (= 1.2.0)
-    - AppCenter/Crashes (= 1.2.0)
-  - AppCenter/Analytics (1.2.0):
+  - AppCenter (2.2.0):
+    - AppCenter/Analytics (= 2.2.0)
+    - AppCenter/Crashes (= 2.2.0)
+  - AppCenter/Analytics (2.2.0):
     - AppCenter/Core
-  - AppCenter/Core (1.2.0)
-  - AppCenter/Crashes (1.2.0):
+  - AppCenter/Auth (2.2.0):
+    - AppCenter/Core
+  - AppCenter/Core (2.2.0)
+  - AppCenter/Crashes (2.2.0):
     - AppCenter/Core
   - appcenter_analytics (0.0.1):
     - AppCenter/Analytics
+    - Flutter
+  - appcenter_auth (0.0.1):
+    - AppCenter/Auth
     - Flutter
   - appcenter_crashes (0.0.1):
     - AppCenter/Crashes
@@ -19,10 +24,11 @@ PODS:
   - Flutter (1.0.0)
 
 DEPENDENCIES:
-  - appcenter (from `/Users/aichehda/Downloads/flutter_plugin_appcenter/src/appcenter/ios`)
-  - appcenter_analytics (from `/Users/aichehda/Downloads/flutter_plugin_appcenter/src/appcenter_analytics/ios`)
-  - appcenter_crashes (from `/Users/aichehda/Downloads/flutter_plugin_appcenter/src/appcenter_crashes/ios`)
-  - Flutter (from `/Users/aichehda/Library/flutter/bin/cache/artifacts/engine/ios`)
+  - appcenter (from `/Users/tomalabaster/Github/flutter_plugin_appcenter/src/appcenter/ios`)
+  - appcenter_analytics (from `/Users/tomalabaster/Github/flutter_plugin_appcenter/src/appcenter_analytics/ios`)
+  - appcenter_auth (from `/Users/tomalabaster/Github/flutter_plugin_appcenter/src/appcenter_auth/ios`)
+  - appcenter_crashes (from `/Users/tomalabaster/Github/flutter_plugin_appcenter/src/appcenter_crashes/ios`)
+  - Flutter (from `/Users/tomalabaster/flutter/bin/cache/artifacts/engine/ios`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -30,21 +36,24 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   appcenter:
-    :path: "/Users/aichehda/Downloads/flutter_plugin_appcenter/src/appcenter/ios"
+    :path: "/Users/tomalabaster/Github/flutter_plugin_appcenter/src/appcenter/ios"
   appcenter_analytics:
-    :path: "/Users/aichehda/Downloads/flutter_plugin_appcenter/src/appcenter_analytics/ios"
+    :path: "/Users/tomalabaster/Github/flutter_plugin_appcenter/src/appcenter_analytics/ios"
+  appcenter_auth:
+    :path: "/Users/tomalabaster/Github/flutter_plugin_appcenter/src/appcenter_auth/ios"
   appcenter_crashes:
-    :path: "/Users/aichehda/Downloads/flutter_plugin_appcenter/src/appcenter_crashes/ios"
+    :path: "/Users/tomalabaster/Github/flutter_plugin_appcenter/src/appcenter_crashes/ios"
   Flutter:
-    :path: "/Users/aichehda/Library/flutter/bin/cache/artifacts/engine/ios"
+    :path: "/Users/tomalabaster/flutter/bin/cache/artifacts/engine/ios"
 
 SPEC CHECKSUMS:
-  AppCenter: d0b68b2a7a87ac0aed78e66f36d87fd321d0a29c
-  appcenter: 5e85f0b7c5c040e551f8976c559103bfdb13cee2
-  appcenter_analytics: ff44d283dfb2942015f45a0550bf3e8be60eb757
-  appcenter_crashes: 5c44889c35121ee939f1b7ca3ea040d6876f9096
-  Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
+  AppCenter: c809e69d93218b9861b4f8e54ded8dcf4d2131e7
+  appcenter: ec63d9079174977ead44a0040ff083d6dd4c94c5
+  appcenter_analytics: 46cd35cb5fac57f7a4b2ae5d5040f984b4ad4b5a
+  appcenter_auth: ce00e8797f88d98e623b58b3167400be687b47db
+  appcenter_crashes: 1b06d86617183e4778779b59f85a25c4bbc89493
+  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
 
-PODFILE CHECKSUM: 351e02e34b831289961ec3558a535cbd2c4965d2
+PODFILE CHECKSUM: d910cc9659b32a21036d69930b02b809aadcc7c8
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.3

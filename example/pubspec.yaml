@@ -22,5 +22,8 @@ dev_dependencies:
   appcenter_crashes:
     path: ../src/appcenter_crashes
 
+  appcenter_auth:
+    path: ../src/appcenter_auth
+
 flutter:
   uses-material-design: true
