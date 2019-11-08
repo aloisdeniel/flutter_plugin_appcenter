@@ -19,32 +19,32 @@ PODS:
   - Flutter (1.0.0)
 
 DEPENDENCIES:
-  - appcenter (from `/Users/aichehda/Downloads/flutter_plugin_appcenter/src/appcenter/ios`)
-  - appcenter_analytics (from `/Users/aichehda/Downloads/flutter_plugin_appcenter/src/appcenter_analytics/ios`)
-  - appcenter_crashes (from `/Users/aichehda/Downloads/flutter_plugin_appcenter/src/appcenter_crashes/ios`)
-  - Flutter (from `/Users/aichehda/Library/flutter/bin/cache/artifacts/engine/ios`)
+  - appcenter (from `.symlinks/plugins/appcenter/ios`)
+  - appcenter_analytics (from `.symlinks/plugins/appcenter_analytics/ios`)
+  - appcenter_crashes (from `.symlinks/plugins/appcenter_crashes/ios`)
+  - Flutter (from `Flutter`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - AppCenter
 
 EXTERNAL SOURCES:
   appcenter:
-    :path: "/Users/aichehda/Downloads/flutter_plugin_appcenter/src/appcenter/ios"
+    :path: ".symlinks/plugins/appcenter/ios"
   appcenter_analytics:
-    :path: "/Users/aichehda/Downloads/flutter_plugin_appcenter/src/appcenter_analytics/ios"
+    :path: ".symlinks/plugins/appcenter_analytics/ios"
   appcenter_crashes:
-    :path: "/Users/aichehda/Downloads/flutter_plugin_appcenter/src/appcenter_crashes/ios"
+    :path: ".symlinks/plugins/appcenter_crashes/ios"
   Flutter:
-    :path: "/Users/aichehda/Library/flutter/bin/cache/artifacts/engine/ios"
+    :path: Flutter
 
 SPEC CHECKSUMS:
   AppCenter: d0b68b2a7a87ac0aed78e66f36d87fd321d0a29c
-  appcenter: 5e85f0b7c5c040e551f8976c559103bfdb13cee2
-  appcenter_analytics: ff44d283dfb2942015f45a0550bf3e8be60eb757
-  appcenter_crashes: 5c44889c35121ee939f1b7ca3ea040d6876f9096
-  Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
+  appcenter: d85aaaf534125cf92375577f086ca0925c817d1d
+  appcenter_analytics: 134239ec65a6097fee5f0407e24423f583bd5942
+  appcenter_crashes: bfde7d247f431a7bbe6b038709261f0432c4b2a6
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
 
-PODFILE CHECKSUM: 351e02e34b831289961ec3558a535cbd2c4965d2
+PODFILE CHECKSUM: 3dbe063e9c90a5d7c9e4e76e70a821b9e2c1d271
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.3
