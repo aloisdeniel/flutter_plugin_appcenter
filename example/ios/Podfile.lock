@@ -22,10 +22,10 @@ DEPENDENCIES:
   - appcenter (from `.symlinks/plugins/appcenter/ios`)
   - appcenter_analytics (from `.symlinks/plugins/appcenter_analytics/ios`)
   - appcenter_crashes (from `.symlinks/plugins/appcenter_crashes/ios`)
-  - Flutter (from `Flutter`)
+  - Flutter (from `.symlinks/flutter/ios`)
 
 SPEC REPOS:
-  trunk:
+  https://github.com/cocoapods/specs.git:
     - AppCenter
 
 EXTERNAL SOURCES:
@@ -36,15 +36,15 @@ EXTERNAL SOURCES:
   appcenter_crashes:
     :path: ".symlinks/plugins/appcenter_crashes/ios"
   Flutter:
-    :path: Flutter
+    :path: ".symlinks/flutter/ios"
 
 SPEC CHECKSUMS:
   AppCenter: d0b68b2a7a87ac0aed78e66f36d87fd321d0a29c
-  appcenter: d85aaaf534125cf92375577f086ca0925c817d1d
-  appcenter_analytics: 134239ec65a6097fee5f0407e24423f583bd5942
-  appcenter_crashes: bfde7d247f431a7bbe6b038709261f0432c4b2a6
+  appcenter: 11f999cb24aa32343a2e8df24075ed65b3a5b9f4
+  appcenter_analytics: 663a7cba8a5671e2299838703918a9354b682e6b
+  appcenter_crashes: 55fe20745061144d63a3cb7e431d2fea9891885a
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
 
-PODFILE CHECKSUM: 3dbe063e9c90a5d7c9e4e76e70a821b9e2c1d271
+PODFILE CHECKSUM: 3d0b47fea56a8b83ae6f63b820d201d800e0b436
 
-COCOAPODS: 1.8.3
+COCOAPODS: 1.7.3

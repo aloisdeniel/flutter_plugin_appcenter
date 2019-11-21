@@ -17,6 +17,7 @@ A new flutter plugin project.
   s.dependency 'Flutter'
   s.dependency 'AppCenter/Analytics'
   s.platform = :ios, '8.0'
+  s.static_framework = true
   
   s.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES',

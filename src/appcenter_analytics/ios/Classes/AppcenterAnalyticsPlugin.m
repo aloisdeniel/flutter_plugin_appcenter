@@ -1,4 +1,4 @@
-#import "AppCenterAnalyticsPlugin.h"
+#import "AppcenterAnalyticsPlugin.h"
 
 #import <AppCenterAnalytics/AppCenterAnalytics.h>
 
