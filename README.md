@@ -1,3 +1,6 @@
+# New maintainer wanted : since I don't use this service anymore this plugin is very low on my priority list. If anyone is interesting in becoming the owner and going further I would be happy to give ownership ! Sorry for that
+
+
 # Visual Studio App Center Plugin for Flutter
 
 [![pub package](https://img.shields.io/pub/v/appcenter.svg)](https://pub.dartlang.org/packages/appcenter) 
