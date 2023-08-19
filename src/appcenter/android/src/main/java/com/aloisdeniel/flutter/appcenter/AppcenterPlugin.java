@@ -3,11 +3,18 @@ package com.aloisdeniel.flutter.appcenter;
 import java.util.UUID;
 import java.util.List;
 import java.util.ArrayList;
+
+import android.app.Activity;
 import android.app.Application;
+
+import androidx.annotation.NonNull;
 
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.utils.async.AppCenterConsumer;
 
+import io.flutter.embedding.engine.plugins.FlutterPlugin;
+import io.flutter.embedding.engine.plugins.activity.ActivityAware;
+import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
@@ -17,28 +24,42 @@ import io.flutter.plugin.common.PluginRegistry.Registrar;
 /**
  * AppcenterPlugin
  */
-public class AppcenterPlugin implements MethodCallHandler {
+public class AppcenterPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
 
-  private Registrar registrar;
+  private MethodChannel channel;
+  private Activity activity;
 
-  private AppcenterPlugin(Registrar registrar) {
-    this.registrar = registrar;
-  }
-
-  /**
-   * Plugin registration.
-   */
-  public static void registerWith(Registrar registrar) {
-    final MethodChannel channel = new MethodChannel(registrar.messenger(), "aloisdeniel.github.com/flutter_plugin_appcenter/appcenter");
-
-    final AppcenterPlugin plugin = new AppcenterPlugin(registrar);
-    channel.setMethodCallHandler(plugin);
+  @Override
+  public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
+    channel = new MethodChannel(binding.getBinaryMessenger(), "aloisdeniel.github.com/flutter_plugin_appcenter/appcenter");
+    channel.setMethodCallHandler(this);
   }
 
   @Override
-  public void onMethodCall(MethodCall call, final Result result) {
+  public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
+    channel.setMethodCallHandler(null);
+  }
 
-    Application app = this.registrar.activity().getApplication();
+  @Override public void onDetachedFromActivity() {}
+
+  @Override public void onReattachedToActivityForConfigChanges(ActivityPluginBinding binding) {
+    useBinding(binding);
+  }
+
+  @Override public void onAttachedToActivity(ActivityPluginBinding binding) {
+    useBinding(binding);
+  }
+
+  @Override public void onDetachedFromActivityForConfigChanges() {}
+
+  private void useBinding(ActivityPluginBinding binding) {
+    activity = binding.getActivity();
+  }
+
+  @Override
+  public void onMethodCall(MethodCall call, @NonNull final Result result) {
+
+    Application app = this.activity.getApplication();
 
     switch (call.method) {
       case "installId":

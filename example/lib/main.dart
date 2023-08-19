@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:appcenter/appcenter.dart';
 import 'package:appcenter_analytics/appcenter_analytics.dart';
 import 'package:appcenter_crashes/appcenter_crashes.dart';
 import 'package:flutter/foundation.dart' show defaultTargetPlatform;
-import 'package:flutter/foundation.dart' show TargetPlatform;
 
 void main() => runApp(MyApp());
 
@@ -14,13 +12,15 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _appSecret;
+  late String _appSecret;
   String _installId = 'Unknown';
   bool _areAnalyticsEnabled = false, _areCrashesEnabled = false;
 
   _MyAppState() {
     final ios = defaultTargetPlatform == TargetPlatform.iOS;
-    _appSecret = ios ? "a8a33033-ef2f-4911-a664-a7d118287ce7" : "3f1f3b0e-24ff-436a-b42d-3c08b117d46a";
+    _appSecret = ios
+        ? "a8a33033-ef2f-4911-a664-a7d118287ce7"
+        : "3f1f3b0e-24ff-436a-b42d-3c08b117d46a";
   }
 
   @override
@@ -61,7 +61,7 @@ class _MyAppState extends State<MyApp> {
             Text('Install identifier:\n $_installId'),
             Text('Analytics: $_areAnalyticsEnabled'),
             Text('Crashes: $_areCrashesEnabled'),
-            RaisedButton(
+            ElevatedButton(
               child: Text('Generate test crash'),
               onPressed: AppCenterCrashes.generateTestCrash,
             ),
