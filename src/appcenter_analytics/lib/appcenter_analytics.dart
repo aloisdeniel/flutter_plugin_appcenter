@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart' show defaultTargetPlatform;
-import 'package:flutter/foundation.dart' show TargetPlatform;
 
 class AppCenterAnalytics {
   static String get id => (defaultTargetPlatform == TargetPlatform.iOS)
@@ -20,7 +19,7 @@ class AppCenterAnalytics {
         'isEnabled': isEnabled,
       });
 
-  static Future trackEvent(String name, [Map<String, String> properties]) =>
+  static Future trackEvent(String name, [Map<String, String>? properties]) =>
       _channel.invokeMethod('trackEvent', <String, dynamic>{
         'name': name,
         'properties': properties ?? <String, String>{},

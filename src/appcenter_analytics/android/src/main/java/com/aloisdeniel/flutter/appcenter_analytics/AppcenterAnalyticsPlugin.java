@@ -1,36 +1,34 @@
 package com.aloisdeniel.flutter.appcenter_analytics;
 
-import java.util.UUID;
-import java.util.Map;
-import android.app.Application;
+import androidx.annotation.NonNull;
 
 import com.microsoft.appcenter.analytics.Analytics;
 import com.microsoft.appcenter.utils.async.AppCenterConsumer;
 
+import java.util.Map;
+
+import io.flutter.embedding.engine.plugins.FlutterPlugin;
+import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.MethodCall;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /**
  * AppcenterAnalyticsPlugin
  */
-public class AppcenterAnalyticsPlugin implements MethodCallHandler {
-  private Registrar registrar;
+public class AppcenterAnalyticsPlugin implements FlutterPlugin, MethodCallHandler {
 
-  private AppcenterAnalyticsPlugin(Registrar registrar) {
-    this.registrar = registrar;
+  private MethodChannel channel;
+
+  @Override
+  public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
+    channel = new MethodChannel(binding.getBinaryMessenger(), "aloisdeniel.github.com/flutter_plugin_appcenter/appcenter_analytics");
+    channel.setMethodCallHandler(this);
   }
 
-  /**
-   * Plugin registration.
-   */
-  public static void registerWith(Registrar registrar) {
-    final MethodChannel channel = new MethodChannel(registrar.messenger(), "aloisdeniel.github.com/flutter_plugin_appcenter/appcenter_analytics");
-
-    final AppcenterAnalyticsPlugin plugin = new AppcenterAnalyticsPlugin(registrar);
-    channel.setMethodCallHandler(plugin);
+  @Override
+  public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
+    channel.setMethodCallHandler(null);
   }
 
   @Override

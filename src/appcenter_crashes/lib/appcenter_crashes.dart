@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart' show defaultTargetPlatform;
-import 'package:flutter/foundation.dart' show TargetPlatform;
 
 class AppCenterCrashes {
   static String get id => (defaultTargetPlatform == TargetPlatform.iOS)
